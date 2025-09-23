@@ -1,10 +1,10 @@
 let amigos = [];
 
-function agregarAmigos() {
+function agregarAmigo() {
   let inputAmigo = document.getElementById("amigo");
   let amigo = inputAmigo.value.trim();
 
-  if (amigo === "") { 
+  if (amigo === "") {
     alert("Por favor, inserte un nombre.");
     return;
   }
@@ -37,3 +37,4 @@ function sortearAmigo() {
   const resultado = document.getElementById("resultado");
   resultado.innerHTML = `<li>🎉 El amigo sorteado es: <strong>${amigoSorteado}</strong></li>`;
 }
+
