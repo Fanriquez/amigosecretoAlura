@@ -1,4 +1,5 @@
 let amigos = [];
+let sorteoRealizado = false;
 
 function agregarAmigo() {
   let inputAmigo = document.getElementById("amigo");
@@ -7,6 +8,12 @@ function agregarAmigo() {
   if (amigo === "") {
     alert("Por favor, inserte un nombre.");
     return;
+  }
+
+  if (sorteoRealizado) {
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = "";
+    sorteoRealizado = false;
   }
 
   amigos.push(amigo);
@@ -36,6 +43,9 @@ function sortearAmigo() {
 
   amigos = [];
   mostrarAmigos(); 
+  
   const resultado = document.getElementById("resultado");
   resultado.innerHTML = `<li>🎉 El amigo sorteado es: <strong>${amigoSorteado}</strong></li>`;
+  
+  sorteoRealizado = true;
 }
